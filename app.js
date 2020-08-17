@@ -89,7 +89,7 @@ const mainMenu = () => {
     {
       type: 'list',
       name: 'role',
-      choices: ['Employee', 'Manager', 'Engineer', 'Intern'],
+      choices: ['Manager', 'Engineer', 'Intern'],
       message: 'Choose employee role:'
     },
     {
@@ -112,10 +112,6 @@ const mainMenu = () => {
     // right now code will display first prompt in terminal, then kick me out of it before I can respond. But if I comment out the then & catch lines below (right now 112 - 130), it will let me run through all the questions.
     .then(employee => {
       switch (employee.role) {
-        case 'Employee':
-          employees.push(new Employee(employee.name, employee.id, employee.email))
-          subMenu()
-          break
         case 'Manager':
           buildManager(employee)
           break
